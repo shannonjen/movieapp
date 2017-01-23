@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var pg = require('pg');
 // var DB_URL = 'postgres://localhost:5432/movieapp'
-
+var port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views','./views' )
 
