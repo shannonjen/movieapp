@@ -15,6 +15,6 @@ app.get('/movies', function(req, res){
   res.send("Hello TTP!")
 })
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("You are listening on port 3000")
 })
