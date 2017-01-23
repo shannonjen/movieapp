@@ -7,12 +7,12 @@ app.set('view engine', 'ejs');
 app.set('views','./views' )
 
 app.get('/movies', function(req, res){
-  // pg.connect(DB_URL, function(err,response,done){
-  //   response.query(`select * from movies`, function(err, result){
-  //     res.render("index", { movies: result.rows })
-  //   })
-  // })
-  res.send("Hello TTP!")
+  pg.connect(process.env.DATABASE_URL, function(err,response,done){
+    response.query(`select * from movies`, function(err, result){
+      res.render("index", { movies: result.rows })
+    })
+  })
+  //res.send("Hello TTP!")
 })
 
 app.listen(port, function(){
